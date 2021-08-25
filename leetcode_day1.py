@@ -24,3 +24,19 @@ def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
             else:
                 n.append(i)
         return n 
+
+# Question 4/176 Single Numbers
+def singleNumber(self, nums: List[int]) -> int: 
+        array = []
+        for i in nums:
+            if i not in array:
+                array.append(i)
+            else:
+                array.remove(i)
+        return array[0]
+ # Optimized required Solution (Bit Manipulation)
+def singleNumber(self, nums: List[int]) -> int: 
+    a = 0
+    for i in nums:
+        a ^= i
+    return a
